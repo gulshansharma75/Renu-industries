@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlameMaster Stoves</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const Navbar = () => (
+      <nav class="bg-gray-800 text-white p-4 flex justify-between items-center">
+        <div class="text-2xl font-bold">FlameMaster Stoves</div>
+        <div class="space-x-4">
+          <a href="#home" class="hover:text-gray-300">Home</a>
+          <a href="#products" class="hover:text-gray-300">Products</a>
+          <a href="#about" class="hover:text-gray-300">About</a>
+          <a href="#contact" class="hover:text-gray-300">Contact</a>
+        </div>
+      </nav>
+    );
+
+    const Hero = () => (
+      <section id="home" class="relative h-screen flex items-center justify-center">
+        <img 
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
+          alt="Modern stove burner" 
+          class="absolute inset-0 w-full h-full object-cover opacity-70"
+        />
+        <div class="relative z-10 text-center text-white">
+          <h1 class="text-5xl font-bold mb-4">Ignite Your Kitchen</h1>
+          <p class="text-xl mb-6">Premium stove burners designed for precision and style</p>
+          <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+            Explore Products
+          </button>
+        </div>
+      </section>
+    );
+
+    const Products = () => (
+      <section id="products" class="py-16 px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">Our Burners</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Dual Flame</h3>
+            <p class="text-gray-600">High-efficiency dual-ring burner for versatile cooking.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Tornado Burner</h3>
+            <p class="text-gray-600">Powerful and even heat distribution.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Eco Burner</h3>
+            <p class="text-gray-600">Energy-saving design for sustainable cooking.</p>
+          </div>
+        </div>
+      </section>
+    );
+
+    const About = () => (
+      <section id="about" class="bg-gray-200 py-16 px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">About Us</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+          FlameMaster Stoves has been crafting top-quality stove burners for over 20 years. 
+          Our mission is to bring innovation and reliability to every kitchen.
+        </p>
+      </section>
+    );
+
+    const Contact = () => (
+      <section id="contact" class="py-16 px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+        <p class="text-lg mb-4">Have questions? Reach out to us!</p>
+        <div class="space-y-4 max-w-md mx-auto">
+          <input 
+            type="text" 
+            placeholder="Your Name" 
+            class="w-full p-2 rounded border border-gray-300"
+          />
+          <input 
+            type="email" 
+            placeholder="Your Email" 
+            class="w-full p-2 rounded border border-gray-300"
+          />
+          <textarea 
+            placeholder="Your Message" 
+            class="w-full p-2 rounded border border-gray-300 h-32"
+          ></textarea>
+          <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+            Send Message
+          </button>
+        </div>
+      </section>
+    );
+
+    const Footer = () => (
+      <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>&copy; 2025 FlameMaster Stoves. All rights reserved.</p>
+      </footer>
+    );
+
+    const App = () => (
+      <div>
+        <Navbar />
+        <Hero />
+        <Products />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
